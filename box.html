@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+
+.change-color-btn {
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1"></div>
+        <button class="change-color-btn" onclick="changeColor('box1')">Change Color</button>
+      </div>
+      
+      <div class="container">
+        <div class="box" id="box2"></div>
+        <button class="change-color-btn" onclick="changeColor('box2')">Change Color</button>
+      </div>
+      
+      <div class="container">
+        <div class="box" id="box3"></div>
+        <button class="change-color-btn" onclick="changeColor('box3')">Change Color</button>
+      </div>
+      <script>
+        function changeColor(boxId) {
+  var box = document.getElementById(boxId);
+  var randomColor = getRandomColor();
+  box.style.backgroundColor = randomColor;
+}
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+      </script>
+      
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Form</title>
+    <style>
+        body {
+            background-color: bisque;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        #output {
+            display: none;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <h4>Login Form</h4>
+    <form id="input">
+        <label for="id">Username:</label>
+        <input type="text" id="id" name="id"><br><br>
+        <label for="password">password:</label>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="button" value="submit" id="submitbutton" style="margin-bottom: 20px;"><br><br>
+
+    </form>
+    <div id="output"></div>
+    <script>
+        document.getElementById('submitbutton').addEventListener('click',function(){
+            var id= document.getElementById('id').value;
+            var password= document.getElementById('password').value;
+            var outputDiv=document.getElementById('output');
+
+            outputDiv.innerHTML = "ID: "+id+ "<br>Password :"+password;
+            outputDiv.style.display="block";
+        });
+    </script>
+
+    
+</body>
+</html>

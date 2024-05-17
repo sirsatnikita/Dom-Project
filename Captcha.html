@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GENERATE CAPTCHA</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: rgb(50, 161, 205);
+    }
+
+    #show {
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+
+    #generateButton {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div id="show"></div>
+<button id="generateButton">GENERATE CAPTCHA</button>
+
+<script>
+    document.getElementById('generateButton').addEventListener('click', function() {
+        var number = Math.floor(Math.random() * 10); 
+        var alphabet = String.fromCharCode(69 + Math.floor(Math.random() * 26)); 
+        
+        var show = document.getElementById('show');
+        show.textContent = number + ' ' + alphabet + number ;
+    });
+</script>
+
+</body>
+</html>
